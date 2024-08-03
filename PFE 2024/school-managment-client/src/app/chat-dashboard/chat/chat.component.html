@@ -1,0 +1,13 @@
+<div class="container" style="border: #3f51b5" size="50px">
+  <div *ngFor="let message of messages">
+    <p>{{ message["sender"] }}: {{ message["content"] }}</p>
+  </div>
+
+  <form (ngSubmit)="sendMessage()">
+    <input type="text" [(ngModel)]="newMessage.content" name="content" placeholder="Entrez votre message">
+    <button type="submit">Envoyer</button>
+  </form>
+
+
+</div>
+

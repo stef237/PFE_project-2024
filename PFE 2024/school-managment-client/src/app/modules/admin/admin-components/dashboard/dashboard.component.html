@@ -1,0 +1,45 @@
+<!-- src/app/dashboard/dashboard.component.html -->
+<div class="dashboard">
+
+  <mat-grid-list cols="2" rowHeight="300px" gutterSize="20px">
+    <mat-grid-tile>
+      <mat-card>
+        <mat-card-title>Nombre de visites</mat-card-title>
+        <mat-card-content>{{ numberOfVisits }}</mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card>
+        <mat-card-title>Nombre d'utilisateurs</mat-card-title>
+        <mat-card-content>{{ userStatistics }}</mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card>
+        <mat-card-title>Nombre de formations</mat-card-title>
+        <mat-card-content>{{ formationStatistics }}</mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card>
+        <mat-card-title>Nombre de certificats</mat-card-title>
+        <mat-card-content>{{ certificatStatistics }}</mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+  <mat-card class="formation-card">
+    <mat-card-title>Liste des formations</mat-card-title>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let formation of formationData">
+          {{ formation.name }} - {{ formation.count }}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
